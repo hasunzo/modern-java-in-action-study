@@ -13,9 +13,9 @@ public class Apple {
     private Color color;
     private int weight;
 
-    public Apple(Color color, int wight) {
+    public Apple(int weight, Color color) {
+        this.weight = weight;
         this.color = color;
-        this.weight = wight;
     }
 
     // 네번째 시도 : 추상적 조건으로 필터링
@@ -78,24 +78,4 @@ public class Apple {
         }
         return result;
     }*/
-
-    public static void main(String[] args) {
-        List<Apple> inventory = new ArrayList<>();
-        inventory.add(new Apple(GREEN, 150));
-        inventory.add(new Apple(RED, 150));
-        inventory.add(new Apple(RED, 100));
-        inventory.add(new Apple(GREEN, 100));
-
-        //List<Apple> greenApples = filterApplesByColor(inventory, GREEN);
-        //List<Apple> redApples = filterApplesByColor(inventory, RED);
-
-        // 세번째 시도
-        /*List<Apple> greenApples = filterApples(inventory, GREEN, 0, true);
-        List<Apple> heavyApples = filterApples(inventory, null, 150, false);*/
-
-        List<Apple> redAndHeavyApples = filterApples(inventory, new AppleRedAndHeavyPredicate());
-
-        prettyPrintApple(inventory, new AppleFancyFormatter());
-        prettyPrintApple(inventory, new AppleSimpleFormatter());
-    }
 }
