@@ -11,9 +11,9 @@ import static com.example.chapter2.Color.RED;
 @Getter
 public class Apple {
     private Color color;
-    private int weight;
+    private Integer weight;
 
-    public Apple(int weight, Color color) {
+    public Apple(Integer weight, Color color) {
         this.weight = weight;
         this.color = color;
     }
