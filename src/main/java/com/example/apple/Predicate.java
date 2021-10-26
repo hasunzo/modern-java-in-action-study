@@ -1,4 +1,4 @@
-package com.example.chapter2;
+package com.example.apple;
 
 public interface Predicate<T> {
     boolean test(T t);

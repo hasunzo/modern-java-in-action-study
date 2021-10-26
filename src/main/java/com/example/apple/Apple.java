@@ -1,12 +1,9 @@
-package com.example.chapter2;
+package com.example.apple;
 
 import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.chapter2.Color.GREEN;
-import static com.example.chapter2.Color.RED;
 
 @Getter
 public class Apple {

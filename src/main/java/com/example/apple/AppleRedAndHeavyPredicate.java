@@ -1,6 +1,6 @@
-package com.example.chapter2;
+package com.example.apple;
 
-import static com.example.chapter2.Color.RED;
+import static com.example.apple.Color.RED;
 
 public class AppleRedAndHeavyPredicate implements ApplePredicate {
     public boolean test(Apple apple) {

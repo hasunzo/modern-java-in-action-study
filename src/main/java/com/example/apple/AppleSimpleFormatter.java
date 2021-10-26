@@ -1,4 +1,4 @@
-package com.example.chapter2;
+package com.example.apple;
 
 public class AppleSimpleFormatter implements AppleFormatter {
     public String accept(Apple apple) {

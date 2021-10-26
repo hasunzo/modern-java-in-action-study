@@ -1,4 +1,4 @@
-package com.example.chapter2;
+package com.example.apple;
 
 public class AppleHeavyWeightPredicate implements ApplePredicate{
     public boolean test(Apple apple) {

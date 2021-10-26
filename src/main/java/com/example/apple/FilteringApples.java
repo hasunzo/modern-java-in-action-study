@@ -1,8 +1,5 @@
-package com.example.chapter2;
+package com.example.apple;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.beans.EventHandler;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -11,8 +8,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-import static com.example.chapter2.Color.GREEN;
-import static com.example.chapter2.Color.RED;
+import static com.example.apple.Color.GREEN;
+import static com.example.apple.Color.RED;
 
 public class FilteringApples {
     public static void main(String[] args) {
@@ -87,6 +84,36 @@ public class FilteringApples {
 
         Future<String> threadName2 = executorService.submit(() -> Thread.currentThread().getName());
 
+        // 3장 람다 표현식
+        // Comparator 간결하게 구현하기
+        // 기존 코드
+        Comparator<Apple> byWeight = new Comparator<Apple>() {
+            public int compare(Apple a1, Apple a2) {
+                return a1.getWeight().compareTo(a2.getWeight());
+            }
+        };
+
+        // 람다로
+        Comparator<Apple> byWeight2 = (Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight());
+
+        List<Apple> greenApples2 = filter(inventory, (Apple apple) -> GREEN.equals(apple.getColor()));
+
+        Runnable r1 = () -> System.out.println("Hello World 1");
+
+        Runnable r2 = new Runnable() {
+            public void run() {
+                System.out.println("Hello World 2");
+            }
+        };
+
+        process(r1);
+        process(r2);
+        process(() -> System.out.println("Hello World 3"));
+
+    }
+
+    public static void process(Runnable r) {
+        r.run();
     }
 
     public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) {
